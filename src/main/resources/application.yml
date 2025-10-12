@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: tc2_microsservico_discovery_server
+
+server:
+  port: 8888
