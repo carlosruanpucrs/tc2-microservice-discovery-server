@@ -3,14 +3,19 @@ spring:
     name: discovery-server
 
 server:
-  port: 8761
+  port: ${PORT:8080}
 
 eureka:
   client:
     register-with-eureka: false
     fetch-registry: false
-  server:
-    enable-self-preservation: false
-    wait-time-in-ms-when-sync-empty: 0
+    service-url:
+      defaultZone: https://tc2-microservice-discovery-server.onrender.com/eureka/
   instance:
-    hostname: ${RENDER_EXTERNAL_URL:localhost}
+    hostname: tc2-microservice-discovery-server.onrender.com
+    non-secure-port-enabled: false
+    secure-port-enabled: true
+    secure-port: 443
+    prefer-ip-address: false
+    status-page-url: https://tc2-microservice-discovery-server.onrender.com/actuator/info
+    health-check-url: https://tc2-microservice-discovery-server.onrender.com/actuator/health
