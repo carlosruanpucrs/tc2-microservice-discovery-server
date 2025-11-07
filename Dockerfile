@@ -13,7 +13,7 @@ FROM eclipse-temurin:21-jdk
 
 WORKDIR /app
 
-EXPOSE 8080
+EXPOSE 8761
 
 COPY --from=build /app/build/libs/*.jar tc2-microservico-discovery-server.jar
 
